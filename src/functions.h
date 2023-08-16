@@ -77,6 +77,8 @@ void sendAPI(int event, struct Device dev)
         StaticJsonDocument<200> jsonBuffer;
         JsonObject root = jsonBuffer.to<JsonObject>();
 
+        dev.mac.trim();
+
         root["macAddress"] = dev.mac;
         root["mdevId"] = PLACE;
 
